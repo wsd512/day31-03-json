@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * @program: wsd165
@@ -34,6 +35,11 @@ public class LoginServlet extends HttpServlet {
         //把Java对象转成json对象
         String jsonString = JSON.toJSONString(user);
         System.out.println("jsonString = " + jsonString);
+
+        response.setContentType("text/html;charset=utf-8");
+        PrintWriter out = response.getWriter();
+
+        out.print(json);
 
     }
 
